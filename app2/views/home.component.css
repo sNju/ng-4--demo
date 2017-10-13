@@ -1,0 +1,12 @@
+.className{
+    background-color: grey;
+    color:white ;
+    display: inline-block;
+}
+.custom{
+    border-top: 20px solid #f5f5f5;
+    border-bottom: 20px solid #f5f5f5;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}

@@ -1,0 +1,20 @@
+<div class="content">this is Home page</div>
+<div class="custom">
+
+<p [textContent]='propertyBinding'></p>
+
+<p>{{propertyBinding}}</p>
+
+<p [class.className]='ifTrue'>{{className}}</p>
+
+<p [style.backgroundColor]="(ifTrue) ? 'grey':'#000'" [style.width]="(ifTrue) ? '25%':'25%'"> {{styleBinding}}  </p>
+
+<p [ngStyle]="addStyle">using ngStyle</p>
+
+<p changeColor>this color is coming from directive</p>
+
+<p>{{limit | limitTo:'45'}}</p>
+
+<p>{{money | currency:'INR':true}}</p>
+
+</div>

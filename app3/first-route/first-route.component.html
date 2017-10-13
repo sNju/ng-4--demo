@@ -1,0 +1,98 @@
+<div>
+      
+  <h1>hiiiiiiiiiiiiii {{name}}</h1>
+<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a><br/>
+<a routerLink="/first" routerLinkActive="active" >go first route page</a><br/>
+<a routerLink="/second" routerLinkActive="active">go second route page</a><br/>
+</div>
+
+
+<div style="text-align:center">
+    <h1 blueColor> 
+      <!-- blueColor is directive here-->
+     {{hi + ' ' + title}} click on me!<br/>
+  
+    </h1>
+   <div *ngIf="1==1">checking ng if true</div>
+   <div *ngIf="1==2">checking ng if false</div>
+  
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   
+  
+   <button (click)="toggleDiv()">toggleDiv</button>
+   <div *ngIf="visible">toggling</div>
+  
+  
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  
+  <div *ngIf="ifElse;then evenClicked else oddClicked">doesn't show</div>
+  <button (click)="toggleEvenOdd()">toggling with if else using ng-template</button>
+  <ng-template #evenClicked>evenClicked</ng-template>
+  <ng-template #oddClicked>oddClicked</ng-template>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  <button (click)="toggleLocalVa()">toggleDiv</button>
+  <div *ngIf="counter % 2 == 0; let randamVar">
+  woow this is awesome! local variable assignment {{randamVar}}{{counter}}
+  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div *ngIf="myFav.frontend; let randamVar">
+    useing objects {{randamVar.join('/awesom/')}}
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div *ngFor="let data of myFavFor;let i=index;">
+  <ul>
+    <li>{{i}}index---{{data.name}} and {{data.type}}</li>
+  </ul>
+  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+  <!-- provides some awesome features like even odd first last -->
+  <div *ngFor="let data of myFavFor;let j=first;">
+      <ul>
+        <li *ngIf="j">{{i}}index---{{data.name}} and {{data.type}}</li>
+      </ul>
+  </div>
+      <br/>
+      <br/>
+      <br/>
+  <div >One Way data binding</div>
+  <p>
+  1+2= <input type="text" value="{{result}}"> 
+  same this like this
+  <input type="text" [value]="result">or like this
+  <input type="text" bind-value="result"><br/>
+  <input type="text" [value]="result" (keydown)="keydoneFunc()">or we can write function like this
+  <input type="text" [value]="result" on-keydown="keydoneFunc($event)">and we cna check event also
+  </p>
+  <div >Two way data binding</div>
+  <p>
+  hello {{username}}
+    <input type="text" [value]="username" (input)="changeUserName($event)">
+    or we can do this using importing [formsModule] simply
+  <br/>
+  hello {{baba}}
+    <input type="text" [value]="baba" [(ngModel)]="baba">
+    or we can do this using importing [formModule] simply
+  </p>
+  

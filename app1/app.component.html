@@ -1,0 +1,38 @@
+<!-- property binding -->
+<p [textContent]='title'>
+</p>
+<!-- attr binding  using [attr.]-->
+
+<!-- class binding -->
+<p [class.sanju]='isActive'>
+  data {{data}}
+</p>
+<!-- style binding -->
+
+<p [style.backgroundColor]="isActive ? '#fff':'#fff'">
+  data {{data}}
+</p>
+
+<!-- <input type="text" [(ngModel)]=limitNo> -->
+
+<!--event bubbling (events bubbls up on the dom tree)-->
+
+<div (click)="divClicked($event)">div
+  <button (click)=buttonClicked($event) class="btn btn-primary">search</button> 
+</div>
+
+<!--event filtring-->
+<input (keyup)=onKeyUp($event)>
+<!--we can access our value like this also-->
+<input #email (keyup)=onKeyUpNew(email.value)>
+
+<!--we can do same thing in ng4 like this this is awesome we need not to check the keyCode or something else-->
+<input (keydown.enter)=onKeyDown()>
+
+<!--two way data binding-->
+<input [(ngModel)]='data' (keydown)=keyUp()>
+
+<p>{{pipeText | limitTo:'5'}}</p>
+
+
+<app-input-output [InputData]='checkingInputdata'></app-input-output>
